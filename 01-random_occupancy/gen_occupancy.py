@@ -44,9 +44,12 @@ if __name__ == "__main__":
     prob = 0.2
 
     occ = gen_random_occupancy(shape, prob)
+    
+    # TODO: Berechnen Sie mit np.sum() welcher Antiel der Gitterplätze tatsächlich besetzt sind
+    actual_occ = "TODO"
     print(f"Grid shape: {shape}")
     print(f"Target probability: {prob}")
-    print(f"Actual fraction occupied: {np.sum(occ) / np.prod(occ.shape):.3f}")
+    print(f"Actual fraction occupied: {actual_occ:.3f}")
     print("\nOccupancy grid (1=occupied, 0=empty):")
     print(np.array(occ, dtype=int))
     plot_occupancy(occ, title=f"Random occupancy (p={prob})")

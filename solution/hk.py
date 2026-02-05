@@ -79,15 +79,15 @@ if __name__ == "__main__":
     print(f"Actual occupation fraction: {actual_p:.3f}")
 
     print("\nStep 1: Visualizing occupancy...")
-    plot_occupancy(occ, title=f"Occupancy (p={args.p})")
+    plot_occupancy(occ, title=f"Occupancy (p={args.p})",fname="hk_occupancy.png")
 
     print("Step 2: Pass 1 - Provisional labeling...")
     labels_lattice, to_be_merged = pass1(occ)
-    plot_labels(labels_lattice, title="After pass 1 (provisional labels)")
+    plot_labels(labels_lattice, title="After pass 1 (provisional labels)", fname="hk_provisional_labels.png")
 
     print("Step 3: Pass 2 - Resolving equivalences...")
     labels_lattice, unique_labels = pass2(labels_lattice, to_be_merged)
-    plot_labels(labels_lattice, title="After pass 2 (final labels)")
+    plot_labels(labels_lattice, title="After pass 2 (final labels)",fname="hk_final_labels.png")
 
     print(f"\nResult: {len(unique_labels)} clusters identified")
     print(f"Percolation: {percolates(labels_lattice)}")

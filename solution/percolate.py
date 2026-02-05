@@ -108,4 +108,3 @@ if __name__ == "__main__":
     assert not percolates(not_perc)
     assert not percolates(not_perc.T)
     print("\nAll tests passed.")
-
